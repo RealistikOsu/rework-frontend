@@ -1,10 +1,10 @@
 from __future__ import annotations
 
+import logging
+
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from starlette.middleware.base import BaseHTTPMiddleware
-
-import logging
 
 from app.api import middlewares
 from app.services import http
