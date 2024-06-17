@@ -27,7 +27,7 @@ def main() -> int:
         "app.api_boot:api",
         host=settings.APP_HOST,
         port=settings.APP_PORT,
-        reload=True,
+        reload=settings.CODE_HOTRELOAD,
         server_header=False,
         date_header=False,
     )
