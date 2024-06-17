@@ -1,10 +1,10 @@
 ddtrace
 fastapi[all]
-git+https://github.com/akatsuki-v2/shared-modules
 httpx
 jinja2
 orjson
 python-dotenv
+python-json-logger
 python-multipart
 structlog
 uvicorn

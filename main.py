@@ -2,10 +2,12 @@
 
 from __future__ import annotations
 
-import logging
+import atexit
 
 import uvicorn
 
+import app.exception_handling
+import app.logging
 from app.common import settings
 
 try:
@@ -15,6 +17,11 @@ except ImportError:
 
 
 def main() -> int:
+    app.logging.configure_logging()
+
+    app.exception_handling.hook_exception_handlers()
+    atexit.register(app.exception_handling.unhook_exception_handlers)
+
     # run the server
     uvicorn.run(
         "app.api_boot:api",
